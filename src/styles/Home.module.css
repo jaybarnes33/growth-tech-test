@@ -1,0 +1,38 @@
+.container {
+  min-height: 100vh;
+  background-image: radial-gradient(
+    circle 436px at 20.1% 54.8%,
+    rgba(155, 241, 225, 1) 10%,
+    rgba(122, 160, 217, 1) 84%
+  );
+}
+
+.users_wrapper,
+.companies_wrapper {
+  padding: 30px;
+  display: grid;
+
+  place-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+  .users_wrapper {
+    grid-template-columns: repeat(2, 50%);
+  }
+  .companies_wrapper {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .users_wrapper {
+    grid-template-columns: repeat(3, 33%);
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .users_wrapper,
+  .companies_wrapper {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
