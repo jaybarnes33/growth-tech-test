@@ -38,7 +38,10 @@ const User = ({ user }) => {
             />
           </div>
         </div>
-        <div className="arrow">
+        <div
+          className="arrow"
+          title={`Read ${user.name.split(" ")[0]}'s posts`}
+        >
           <Link href={`/posts/user/${user.id}`}>
             <a>
               {" "}

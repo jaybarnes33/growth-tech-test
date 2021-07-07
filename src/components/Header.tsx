@@ -14,17 +14,25 @@ const Header = () => {
             </Link>
           </div>
 
-          <ul className="nav-links">
-            <li>
-              <Link href="/">Users</Link>{" "}
-            </li>
-            <li>
-              <Link href="/companies">Companies</Link>{" "}
-            </li>
-            <li>
-              <Link href="/posts">Posts</Link>
-            </li>
-          </ul>
+          <div className="nav-items">
+            <ul className="nav-links">
+              <li>
+                <Link href="/">Users</Link>{" "}
+              </li>
+              <li>
+                <Link href="/companies">Companies</Link>{" "}
+              </li>
+              <li>
+                <Link href="/posts">Posts</Link>
+              </li>
+            </ul>
+            <div className="search">
+              <input type="search" name="" id="" placeholder="Search " />
+              <button>
+                <Icon name="bi bi-search" />
+              </button>
+            </div>
+          </div>
         </nav>
       </header>
 
@@ -34,23 +42,32 @@ const Header = () => {
             box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.3);
           }
           nav {
-            display: flex;
             padding: 1rem 2rem;
-            justify-content: center;
-            align-items: center;
+            display: flex;
             font-size: 1.5rem;
+            justify-content: space-between;
           }
 
           .nav-links {
             list-style-type: none;
-            display: flex;
-            margin-left: auto;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
             font-size: 1.2rem;
+            gap: 2rem;
+            place-items: center;
           }
 
+          .nav-items {
+            display: flex;
+            flex-wrap: wrap;
+          }
           .nav-brand {
             font-size: 2rem;
+          }
+
+          .search {
+            display: flex;
+            justify-content: center;
           }
         `}
       </style>
