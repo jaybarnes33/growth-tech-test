@@ -5,16 +5,29 @@
     rgba(155, 241, 225, 1) 10%,
     rgba(122, 160, 217, 1) 84%
   );
+  position: relative;
 }
 
 .users_wrapper,
-.companies_wrapper {
-  padding: 30px;
+.companies_wrapper,
+.posts_wrapper {
+  position: relative;
+  padding: 70px 30px;
   display: grid;
 
   place-items: center;
 }
 
+.buttons {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.paginationbtn {
+  padding: 20px;
+}
 @media screen and (min-width: 1200px) {
   .users_wrapper {
     grid-template-columns: repeat(2, 50%);

@@ -1,4 +1,5 @@
 //@ts-nocheck
+import Link from "next/link";
 import React from "react";
 import Icon from "./Icon";
 
@@ -37,32 +38,34 @@ const User = ({ user }) => {
             />
           </div>
         </div>
-
         <div className="arrow">
-          <Icon name="bi bi-arrow-right" />
+          <Link href={`/posts/user/${user.id}`}>
+            <a>
+              {" "}
+              <Icon name="bi bi-arrow-right" />
+            </a>
+          </Link>
         </div>
       </div>
       <style jsx>{`
         .name {
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: bold;
           font-family: "Merriweather", serif;
           font-style: italic;
         }
 
         .user-wrapper {
-          margin: 1rem;
+          margin-top: 1rem;
           box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.3);
-          padding: 30px 30px 50px 30px;
-          width: 350px;
+          padding: 10px;
           position: relative;
           background-color: #f4f4f4;
           background-image: url("/pattern2.jpg");
           background-blend-mode: overlay;
-
+          width: 100%;
           background-size: contain;
           background-repeat: no-repeat;
-          height: 11rem;
         }
 
         .arrow {
@@ -81,7 +84,7 @@ const User = ({ user }) => {
 
         .address {
           display: grid;
-          grid-template-columns: 40% 60%;
+          grid-template-columns: 35% 65%;
           gap: 10px;
           font-size: 0.8rem;
         }
@@ -102,6 +105,18 @@ const User = ({ user }) => {
           left: 0;
           text-align: center;
           font-style: italic;
+        }
+
+        @media screen and (min-width: 1000px) {
+          .name {
+            font-size: 2rem;
+          }
+          .user-wrapper {
+            width: 350px;
+            height: 11rem;
+            padding: 30px 30px 50px 30px;
+            margin: 1rem;
+          }
         }
       `}</style>
     </>
