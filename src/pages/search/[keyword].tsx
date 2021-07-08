@@ -21,6 +21,9 @@ const index = ({ keyword }) => {
       </Head>
       <main className={styles.container}>
         <div className={styles.search_wrapper}>
+          {data?.length === 0 && (
+            <Error message={`No items found matching ${keyword}`} />
+          )}
           {data?.map((item: any, index: number) =>
             item.type === "user" ? (
               <User key={index} user={item} />
