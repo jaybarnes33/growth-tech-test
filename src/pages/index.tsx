@@ -23,13 +23,12 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         {error && <Error message={"An error occured whiles fetching data"} />}
-        <main className={styles.main}>
-          <div className={`${styles.users_wrapper}`}>
-            {data?.map((user, index: number) => (
-              <User user={user} key={index} />
-            ))}
-          </div>
-        </main>
+
+        <div className={`${styles.users_wrapper}`}>
+          {data?.map((user, index: number) => (
+            <User user={user} key={index} />
+          ))}
+        </div>
       </div>
     </Layout>
   );

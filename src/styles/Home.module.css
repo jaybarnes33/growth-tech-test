@@ -1,17 +1,16 @@
 .container {
+  padding: 0 20px;
   min-height: 100vh;
-  background: url("/pattern2.jpg") center/cover;
-  position: relative;
+  background: url("/pattern2.jpg") center/cover no-repeat;
 }
 
 .users_wrapper,
 .companies_wrapper,
 .posts_wrapper,
 .search_wrapper {
-  position: relative;
-  padding: 50px 30px;
+  padding: 20px 0;
   display: grid;
-
+  box-sizing: border-box;
   place-items: center;
 }
 
@@ -28,12 +27,20 @@
 .paginationbtn {
   padding: 20px;
 }
-@media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 800px) {
   .users_wrapper {
+    display: grid;
     grid-template-columns: repeat(2, 50%);
   }
+}
+@media screen and (min-width: 1300px) {
   .companies_wrapper {
     grid-template-columns: repeat(4, 25%);
+  }
+  .users_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
   }
 }
 

@@ -66,9 +66,10 @@ const User = ({ user }) => {
           background-color: #f4f4f4;
           background-image: url("/pattern2.jpg");
           background-blend-mode: overlay;
-          width: 100%;
+
           background-size: contain;
           background-repeat: no-repeat;
+          height: 13rem;
         }
 
         .arrow {
@@ -110,13 +111,13 @@ const User = ({ user }) => {
           font-style: italic;
         }
 
-        @media screen and (min-width: 1000px) {
+        @media screen and (min-width: 1300px) {
           .name {
             font-size: 2rem;
           }
           .user-wrapper {
-            width: 350px;
-            height: 11rem;
+            width: 330px;
+
             padding: 30px 30px 50px 30px;
             margin: 1rem;
           }

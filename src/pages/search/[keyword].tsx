@@ -13,8 +13,8 @@ import { useRouter } from "next/router";
 const index = () => {
   const router = useRouter();
   const { keyword } = router.query;
-  const getPosts = async (url: string) => await fetchData(url, "GET");
-  const { data, error } = useSWR(`/api/search?keyword=${keyword}`, getPosts);
+  const getItems = async (url: string) => await fetchData(url, "GET");
+  const { data, error } = useSWR(`/api/search?keyword=${keyword}`, getItems);
 
   return (
     <Layout>
