@@ -13,7 +13,7 @@ const index = () => {
 
   const getPosts = async (url: string) => await fetchData(url, "GET");
   const { data, error } = useSWR(
-    `/api/posts?limit=2&page=${pageIndex}`,
+    `/api/posts?limit=3&page=${pageIndex}`,
     getPosts
   );
 
