@@ -62,6 +62,7 @@ const User = ({ user }) => {
           margin-top: 1rem;
           box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.3);
           padding: 10px;
+          width: 95%;
           position: relative;
           background-color: #f4f4f4;
           background-image: url("/pattern2.jpg");
