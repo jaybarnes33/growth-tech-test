@@ -24,7 +24,7 @@ const Post = ({ data }) => {
           background-image: url("/pattern2.jpg");
           background-blend-mode: overlay;
 
-          background-size: contain;
+          background-size: cover;
           background-repeat: no-repeat;
         }
       `}</style>

@@ -9,6 +9,7 @@ import Post from "../../models/Post";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "GET") {
     try {
+      dbConnect();
       const keyword = req.query.keyword;
       let users = await User.find({
         $or: [
@@ -36,11 +37,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
       posts = posts.map((post) => {
         obj["type"] = "post";
+        users.forEach((user) => {
+          if (user.id === post.userId) {
+            obj["author"] = user.name;
+          }
+        });
 
         return { ...post._doc, ...obj };
       });
-
-      dbConnect();
 
       res.status(200).json([...users, ...posts]);
     } catch (error) {

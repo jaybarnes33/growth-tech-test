@@ -88,6 +88,28 @@ const Header = () => {
             display: flex;
             justify-content: center;
           }
+
+          .search input {
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 3px 0 0 3px;
+            height: 100%;
+          }
+
+          .search button {
+            text-align: center;
+            margin-left: -5px;
+            border: none;
+            height: 100%;
+            padding: 13px 1rem;
+            border-radius: 0 3px 3px 0;
+            background-color: #52006a;
+            color: white;
+          }
+
+          .search input:focus {
+            box-shadow: 0 0px 3px 0 #52006a;
+          }
         `}
       </style>
     </>
