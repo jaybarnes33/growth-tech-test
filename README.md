@@ -12,7 +12,7 @@ npm run dev
 # or
 yarn dev
 ```
-To seed the database, make a *Get* request to /api/seeder.
+To seed the database, make a **Get** request to /api/seeder.
   
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
