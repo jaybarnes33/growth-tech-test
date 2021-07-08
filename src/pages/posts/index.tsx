@@ -24,7 +24,7 @@ const index = () => {
       <Head>
         <title>Posts</title>
       </Head>
-      <main className={styles.container}>
+      <section className={styles.container}>
         <Posts data={data} />
         <div className={styles.buttons}>
           {pageIndex != 1 && (
@@ -46,7 +46,7 @@ const index = () => {
             </button>
           )}
         </div>
-      </main>
+      </section>
     </Layout>
   );
 };

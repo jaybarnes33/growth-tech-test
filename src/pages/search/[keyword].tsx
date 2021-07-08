@@ -22,7 +22,7 @@ const index = () => {
       <Head>
         <title>Posts</title>
       </Head>
-      <main className={styles.container}>
+      <section className={styles.container}>
         <div className={styles.search_wrapper}>
           {data?.length === 0 && (
             <Error message={`No items found matching ${keyword}`} />
@@ -35,7 +35,7 @@ const index = () => {
             )
           )}
         </div>
-      </main>
+      </section>
     </Layout>
   );
 };

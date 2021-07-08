@@ -16,14 +16,14 @@ const index = () => {
       <Head>
         <title>Companies</title>
       </Head>
-      <div className={styles.container}>
+      <section className={styles.container}>
         {error && <Error message="Something went wrong" />}
         <div className={styles.companies_wrapper}>
           {data?.map((company, index: number) => (
             <Company data={company} />
           ))}
         </div>
-      </div>{" "}
+      </section>{" "}
     </Layout>
   );
 };

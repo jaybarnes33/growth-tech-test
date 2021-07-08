@@ -90,6 +90,7 @@ const Header = () => {
           .search {
             display: flex;
             justify-content: center;
+            align-items: center;
           }
 
           .search input {
@@ -103,7 +104,7 @@ const Header = () => {
             text-align: center;
             margin-left: -5px;
             border: none;
-            height: 100%;
+
             padding: 13px 1rem;
             border-radius: 0 3px 3px 0;
             background-color: #52006a;
