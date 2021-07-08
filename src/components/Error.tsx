@@ -1,6 +1,6 @@
 import React from "react";
 
-const Error = (message) => {
+const Error = ({ message }) => {
   return <div>{message}</div>;
 };
 

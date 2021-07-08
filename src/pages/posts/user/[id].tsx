@@ -18,7 +18,7 @@ const index = ({ id }) => {
       </Head>
 
       <main className={styles.container}>
-        <Error message="An error occured whiles fetching data" />
+        {error && <Error message={"An error occured whiles fetching data"} />}
         <Posts data={data} />
       </main>
     </Layout>
