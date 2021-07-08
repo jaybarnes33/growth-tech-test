@@ -43,7 +43,7 @@ const User = ({ user }) => {
           title={`Read ${user.name.split(" ")[0]}'s posts`}
         >
           <Link href={`/posts/user/${user.id}`}>
-            <a>
+            <a aria-label={`Read ${user.name.split(" ")[0]}'s posts`}>
               {" "}
               <Icon name="bi bi-arrow-right" />
             </a>

@@ -29,6 +29,7 @@ const index = () => {
         <div className={styles.buttons}>
           {pageIndex != 1 && (
             <button
+              aria-label="Previous"
               className={styles.paginationbtn}
               onClick={(e) => prevPage()}
             >
@@ -36,7 +37,11 @@ const index = () => {
             </button>
           )}
           {data?.hasMore && (
-            <button className={styles.paginationbtn} onClick={() => nextPage()}>
+            <button
+              aria-label="Next"
+              className={styles.paginationbtn}
+              onClick={() => nextPage()}
+            >
               <i className="bi bi-chevron-right"></i>
             </button>
           )}

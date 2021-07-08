@@ -18,7 +18,7 @@ const Header = () => {
         <nav>
           <div className="nav-brand">
             <Link href="/">
-              <a>#</a>
+              <a aria-label="logo">#</a>
             </Link>
           </div>
 
@@ -44,7 +44,7 @@ const Header = () => {
                   id=""
                   placeholder="Search "
                 />
-                <button name="search" type="submit">
+                <button aria-label="search" name="search" type="submit">
                   <Icon name="bi bi-search" />
                 </button>
               </form>

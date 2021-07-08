@@ -20,10 +20,10 @@ const index = () => {
         <title>Posts | {id}</title>
       </Head>
 
-      <main className={styles.container}>
+      <section className={styles.container}>
         {error && <Error message={"An error occured whiles fetching data"} />}
         <Posts data={data} />
-      </main>
+      </section>
     </Layout>
   );
 };

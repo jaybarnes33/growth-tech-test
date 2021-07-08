@@ -13,15 +13,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Head>
-        <title>Growth-Tech</title>
-        <meta
-          name="description"
-          content="Growth-Tech React Test Built using nextjs"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className={styles.container}>
+      <section className={styles.container}>
         {error && <Error message={"An error occured whiles fetching data"} />}
 
         <div className={`${styles.users_wrapper}`}>
@@ -29,7 +21,7 @@ export default function Home() {
             <User user={user} key={index} />
           ))}
         </div>
-      </div>
+      </section>
     </Layout>
   );
 }

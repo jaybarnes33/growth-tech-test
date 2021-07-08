@@ -15,7 +15,7 @@
 }
 
 .search_wrapper > div {
-  width: 80% !important;
+  width: 90% !important;
 }
 .buttons {
   position: absolute;
@@ -28,6 +28,11 @@
   padding: 20px;
 }
 
+@media screen and (max-width: 800px) {
+  .search_wrapper > div {
+    min-height: 15rem;
+  }
+}
 @media screen and (min-width: 800px) {
   .users_wrapper {
     display: grid;
