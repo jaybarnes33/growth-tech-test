@@ -14,7 +14,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         $or: [
           { name: { $regex: keyword, $options: "i" } },
           { username: { $regex: keyword, $options: "i" } },
-          { company: { $regex: keyword, $options: "i" } },
+          { "company.name": { $regex: keyword, $options: "i" } },
         ],
       });
 
