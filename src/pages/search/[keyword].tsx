@@ -15,7 +15,7 @@ const index = ({ keyword }) => {
 
   return (
     <Layout>
-      {error && <Error message={error} />}
+      {error && <Error message={"An error occured whiles fetching data"} />}
       <Head>
         <title>Posts</title>
       </Head>

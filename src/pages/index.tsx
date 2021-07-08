@@ -22,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
-        {error && <Error message={error} />}
+        {error && <Error message={"An error occured whiles fetching data"} />}
         <main className={styles.main}>
           <div className={`${styles.users_wrapper}`}>
             {data?.map((user, index: number) => (

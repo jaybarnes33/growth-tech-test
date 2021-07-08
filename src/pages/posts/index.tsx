@@ -12,14 +12,14 @@ const index = () => {
   const prevPage = () => pageIndex > 1 && setPageIndex(pageIndex - 1);
 
   const getPosts = async (url: string) => await fetchData(url, "GET");
-  const { data, error, isValidating } = useSWR(
-    `/api/posts?limit=10&page=${pageIndex}`,
+  const { data, error } = useSWR(
+    `/api/posts?limit=3&page=${pageIndex}`,
     getPosts
   );
 
   return (
     <Layout>
-      {error && <Error message={error} />}
+      {error && <Error message="Something went wrong" />}
       <Head>
         <title>Posts</title>
       </Head>

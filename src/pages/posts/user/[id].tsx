@@ -9,7 +9,7 @@ import Error from "components/Error";
 
 const index = ({ id }) => {
   const getPosts = async (url: string) => await fetchData(url, "GET");
-  const { data } = useSWR(`/api/posts/user?user=${id}`, getPosts);
+  const { data, error } = useSWR(`/api/posts/user?user=${id}`, getPosts);
 
   return (
     <Layout>
@@ -18,6 +18,7 @@ const index = ({ id }) => {
       </Head>
 
       <main className={styles.container}>
+        <Error message="An error occured whiles fetching data" />
         <Posts data={data} />
       </main>
     </Layout>
