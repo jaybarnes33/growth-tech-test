@@ -18,9 +18,7 @@ const Header = () => {
         <nav>
           <div className="nav-brand">
             <Link href="/">
-              <a>
-                <Icon name="bi bi-hash" />
-              </a>
+              <a>#</a>
             </Link>
           </div>
 
@@ -46,7 +44,7 @@ const Header = () => {
                   id=""
                   placeholder="Search "
                 />
-                <button type="submit">
+                <button name="search" type="submit">
                   <Icon name="bi bi-search" />
                 </button>
               </form>
@@ -59,12 +57,16 @@ const Header = () => {
         {`
           header {
             box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.3);
+            background-color: #f4f4f4;
+            position: relative;
+            z-index: 1;
           }
           nav {
             padding: 1rem 2rem;
             display: flex;
             font-size: 1.5rem;
             justify-content: space-between;
+            backround-color: #f4f4f4;
           }
 
           .nav-links {
@@ -73,6 +75,7 @@ const Header = () => {
             grid-template-columns: repeat(3, 60px);
             font-size: 1.2rem;
             gap: 2rem;
+            padding: 1rem;
             place-items: center;
           }
 
@@ -93,7 +96,7 @@ const Header = () => {
             padding: 10px;
             border: 1px solid rgba(0, 0, 0, 0.3);
             border-radius: 3px 0 0 3px;
-            height: 100%;
+            height: 40px;
           }
 
           .search button {

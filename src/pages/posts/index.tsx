@@ -6,6 +6,7 @@ import useSWR from "swr";
 import styles from "../../styles/Home.module.css";
 import { useState } from "react";
 import Error from "components/Error";
+import Image from "next/image";
 const index = () => {
   const [pageIndex, setPageIndex] = useState(1);
   const nextPage = () => setPageIndex(pageIndex + 1);
