@@ -15,6 +15,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           { name: { $regex: keyword, $options: "i" } },
           { username: { $regex: keyword, $options: "i" } },
           { "company.name": { $regex: keyword, $options: "i" } },
+          { "address.city": { $regex: keyword, $options: "i" } },
         ],
       });
 
