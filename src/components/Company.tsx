@@ -1,5 +1,4 @@
 const Company = ({ data }) => {
-  console.log(data);
   return (
     <>
       <div className="company_wrapper">

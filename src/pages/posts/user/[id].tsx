@@ -6,20 +6,17 @@ import useSWR from "swr";
 import styles from "styles/Home.module.css";
 
 import Error from "components/Error";
-import { useRouter } from "next/dist/client/router";
-const index = ({}) => {
-  const router = useRouter();
-  const id = router.query;
 
+const index = ({ id }) => {
   const getPosts = async (url: string) => await fetchData(url, "GET");
-  const { data, error } = useSWR(`/api/posts?userId=${id}`, getPosts);
+  const { data } = useSWR(`/api/posts/user?user=${id}`, getPosts);
 
   return (
     <Layout>
-      {error && <Error message={error} />}
       <Head>
-        <title>Posts</title>
+        <title>Posts | {id}</title>
       </Head>
+
       <main className={styles.container}>
         <Posts data={data} />
       </main>
@@ -27,4 +24,9 @@ const index = ({}) => {
   );
 };
 
+index.getInitialProps = async ({ query }) => {
+  const { id } = query;
+
+  return { id: Number(id) };
+};
 export default index;

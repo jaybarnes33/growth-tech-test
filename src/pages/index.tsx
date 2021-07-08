@@ -5,11 +5,11 @@ import useSWR from "swr";
 import fetchData from "utils/fetchData";
 import Layout from "components/Layout";
 import User from "components/User";
+import Error from "components/Error";
 
 export default function Home() {
   const getUsers = async (url: string) => await fetchData(url, "GET");
-  const { data, error, isValidating } = useSWR(`/api/users`, getUsers);
-  console.log(data);
+  const { data, error } = useSWR(`/api/users`, getUsers);
 
   return (
     <Layout>
@@ -22,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
-        {" "}
+        {error && <Error message={error} />}
         <main className={styles.main}>
           <div className={`${styles.users_wrapper}`}>
             {data?.map((user, index: number) => (

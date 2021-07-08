@@ -1,7 +1,17 @@
 //@ts-nocheck
 import Icon from "./Icon";
 import Link from "next/link";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 const Header = () => {
+  const router = useRouter();
+  const [keyword, setKeyWord] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    router.push(`/search/${keyword}`);
+  };
   return (
     <>
       <header>
@@ -27,10 +37,19 @@ const Header = () => {
               </li>
             </ul>
             <div className="search">
-              <input type="search" name="" id="" placeholder="Search " />
-              <button>
-                <Icon name="bi bi-search" />
-              </button>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="search"
+                  value={keyword}
+                  onChange={(e) => setKeyWord(e.target.value)}
+                  name="key"
+                  id=""
+                  placeholder="Search "
+                />
+                <button type="submit">
+                  <Icon name="bi bi-search" />
+                </button>
+              </form>
             </div>
           </div>
         </nav>

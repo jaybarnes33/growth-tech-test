@@ -7,9 +7,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       dbConnect();
       const user_id = req.query.user;
+      console.log(user_id);
+      const posts = await Post.find({ userId: user_id });
 
-      const users = await Post.find({ userId: user_id });
-      res.status(200).json(users);
+      res.status(200).json({ posts });
     } catch (error) {
       console.log(error);
       res.status(500).json("Something went wrong");
