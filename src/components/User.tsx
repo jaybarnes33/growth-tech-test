@@ -69,7 +69,7 @@ const User = ({ user }) => {
 
           background-size: contain;
           background-repeat: no-repeat;
-          height: 13rem;
+          height: 13.5rem;
         }
 
         .arrow {
