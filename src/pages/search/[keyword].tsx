@@ -9,7 +9,10 @@ import Error from "components/Error";
 
 import User from "components/User";
 import Post from "components/Post";
-const index = ({ keyword }) => {
+import { useRouter } from "next/router";
+const index = () => {
+  const router = useRouter();
+  const { keyword } = router.query;
   const getPosts = async (url: string) => await fetchData(url, "GET");
   const { data, error } = useSWR(`/api/search?keyword=${keyword}`, getPosts);
 
@@ -37,8 +40,4 @@ const index = ({ keyword }) => {
   );
 };
 
-index.getInitialProps = ({ query }) => {
-  const { keyword } = query;
-  return { keyword };
-};
 export default index;

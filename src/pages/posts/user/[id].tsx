@@ -6,8 +6,11 @@ import useSWR from "swr";
 import styles from "styles/Home.module.css";
 
 import Error from "components/Error";
+import { useRouter } from "next/router";
 
-const index = ({ id }) => {
+const index = () => {
+  const router = useRouter();
+  const { id } = router.query;
   const getPosts = async (url: string) => await fetchData(url, "GET");
   const { data, error } = useSWR(`/api/posts/user?user=${id}`, getPosts);
 
@@ -25,9 +28,4 @@ const index = ({ id }) => {
   );
 };
 
-index.getInitialProps = async ({ query }) => {
-  const { id } = query;
-
-  return { id: Number(id) };
-};
 export default index;

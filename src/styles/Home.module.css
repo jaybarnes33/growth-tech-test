@@ -9,7 +9,7 @@
 .posts_wrapper,
 .search_wrapper {
   position: relative;
-  padding: 70px 30px;
+  padding: 50px 30px;
   display: grid;
 
   place-items: center;
